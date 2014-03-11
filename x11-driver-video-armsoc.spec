@@ -16,7 +16,7 @@ Group:     System/X11
 
 Source0:   %{upname}.tar.bz2
 
-ExclusiveArch: %{arm}
+ExclusiveArch: %{arm} aarch64
 
 BuildRequires: pkgconfig(gl)
 BuildRequires: pkgconfig(libdrm)
