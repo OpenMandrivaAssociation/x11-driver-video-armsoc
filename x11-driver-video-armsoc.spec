@@ -24,6 +24,7 @@ BuildRequires: pkgconfig(xproto)
 BuildRequires: pkgconfig(gl)
 BuildRequires: pkgconfig(libdrm)
 BuildRequires: pkgconfig(x11)
+BuildRequires: pkgconfig(udev)
 
 Requires:	udev
 
