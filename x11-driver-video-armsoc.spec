@@ -18,6 +18,9 @@ Source0:   %{upname}.tar.bz2
 
 ExclusiveArch: %{arm} aarch64
 
+BuildRequires: pkgconfig(xorg-macros)
+BuildRequires: pkgconfig(xorg-server)
+BuildRequires: pkgconfig(xproto)
 BuildRequires: pkgconfig(gl)
 BuildRequires: pkgconfig(libdrm)
 BuildRequires: pkgconfig(x11)
