@@ -9,7 +9,7 @@
 Summary:   Xorg X11 armsocdrm driver
 Name:      x11-driver-video-armsoc
 Version:   0.6.0
-Release:   0.2
+Release:   0.3
 URL:       http://git.linaro.org/gitweb?p=arm/xorg/driver/xf86-video-armsoc.git
 License:   MIT
 Group:     System/X11
