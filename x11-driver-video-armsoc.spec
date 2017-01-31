@@ -1,30 +1,28 @@
 # Tarfile created using git
-# git clone git://git.linaro.org/arm/xorg/driver/xf86-video-armsoc.git
-# git archive --format=tar --prefix=%{name}-%{version}/ %{gittag} | bzip2 > ~/%{name}-%{version}-%{gittag}.tar.bz2
+# git clone https://anongit.freedesktop.org/git/xorg/driver/xf86-video-armsoc.git
+# git archive --format=tar --prefix xf86-video-armsoc-1.4.1/ HEAD | xz -vf > ../xf86-video-armsoc-1.4.1.tar.xz
 
-%define gittag I4f99e
+%define gittag 1.4.1
 %define upname xf86-video-armsoc
 %define Werror_cflags %nil
 
 Summary:   Xorg X11 armsocdrm driver
 Name:      x11-driver-video-armsoc
-Version:   0.6.0
-Release:   0.5
-URL:       http://git.linaro.org/gitweb?p=arm/xorg/driver/xf86-video-armsoc.git
+Version:   1.4.1
+Release:   1
+URL:       https://anongit.freedesktop.org/git/xorg/driver/xf86-video-armsoc.git
 License:   MIT
 Group:     System/X11
 
-Source0:   %{upname}.tar.bz2
+Source0:   %{upname}-%{version}.tar.xz
 
-ExclusiveArch: %{arm} aarch64
-
-BuildRequires: pkgconfig(xorg-macros)
-BuildRequires: pkgconfig(xorg-server)
-BuildRequires: pkgconfig(xproto)
-BuildRequires: pkgconfig(gl)
-BuildRequires: pkgconfig(libdrm)
-BuildRequires: pkgconfig(x11)
-BuildRequires: pkgconfig(udev)
+BuildRequires:	pkgconfig(xorg-macros)
+BuildRequires:	pkgconfig(xorg-server)
+BuildRequires:	pkgconfig(xproto)
+BuildRequires:	pkgconfig(gl)
+BuildRequires:	pkgconfig(libdrm)
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(udev)
 
 Requires:	udev
 
@@ -33,13 +31,13 @@ X.Org X11 armsocdrm driver for ARM MALI GPUs such as the Samsung
 Exynos 4/5 series ARM devices.
 
 %prep
-%setup -qn %{upname}
+%setup -qn %{upname}-%{version}
 sed -i s'/-Werror//g' src/Makefile.am
 
 %build
-sh autogen.sh --with-drmmode=exynos
-%configure2_5x --with-drmmode=exynos
-make V=1
+sh autogen.sh
+%configure
+%make V=1
 
 %install
 %makeinstall_std
