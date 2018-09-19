@@ -14,7 +14,7 @@ URL:       https://anongit.freedesktop.org/git/xorg/driver/xf86-video-armsoc.git
 License:   MIT
 Group:     System/X11
 
-Source0:   %{upname}-%{version}.tar.xz
+Source0:   https://github.com/endlessm/xf86-video-armsoc/archive/Release_%{version}.tar.gz
 
 BuildRequires:	pkgconfig(xorg-macros)
 BuildRequires:	pkgconfig(xorg-server)
