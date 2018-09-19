@@ -2,13 +2,12 @@
 # git clone https://anongit.freedesktop.org/git/xorg/driver/xf86-video-armsoc.git
 # git archive --format=tar --prefix xf86-video-armsoc-1.4.1/ HEAD | xz -vf > ../xf86-video-armsoc-1.4.1.tar.xz
 
-%define gittag 1.4.1
 %define upname xf86-video-armsoc
 %define Werror_cflags %nil
 
 Summary:   Xorg X11 armsocdrm driver
 Name:      x11-driver-video-armsoc
-Version:   1.4.1
+Version:   3.4.7
 Release:   1
 URL:       https://anongit.freedesktop.org/git/xorg/driver/xf86-video-armsoc.git
 License:   MIT
@@ -31,7 +30,7 @@ X.Org X11 armsocdrm driver for ARM MALI GPUs such as the Samsung
 Exynos 4/5 series ARM devices.
 
 %prep
-%setup -qn %{upname}-%{version}
+%setup -qn %{upname}-Release_%{version}
 sed -i s'/-Werror//g' src/Makefile.am
 
 %build
