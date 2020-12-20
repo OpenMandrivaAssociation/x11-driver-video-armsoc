@@ -7,8 +7,8 @@
 
 Summary:   Xorg X11 armsocdrm driver
 Name:      x11-driver-video-armsoc
-Version:   3.4.7
-Release:   2
+Version:   3.8.7
+Release:   1
 URL:       https://anongit.freedesktop.org/git/xorg/driver/xf86-video-armsoc.git
 License:   MIT
 Group:     System/X11
